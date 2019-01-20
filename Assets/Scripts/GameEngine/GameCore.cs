@@ -7,7 +7,7 @@ using UnityEngine;
 /// The main class of the Pong game - inject all the relvent gameObject to other components
 /// of the program.
 /// </summary>
-public class GameCore : MonoBehaviour
+public class GameCore : MonoBehaviour, IGameCore
 {
     #region Fields
     [SerializeField] private Paddle _playerPaddle1, _playerPaddle2;
@@ -25,14 +25,7 @@ public class GameCore : MonoBehaviour
 
 
 
-    #region Properties
-    public Paddle PlayerPaddle1 { get => _playerPaddle1; }
-    public Paddle PlayerPaddle2 { get => _playerPaddle2; }
-    public KeyConfig KeyConfig { get => _keyConfig; }
-    public Ball Ball { get => _ball; }
-    public TextMeshProUGUI Player1Text { get => _player1Text; }
-    public TextMeshProUGUI Player2Text { get => _player2Text; }
-    #endregion
+   
 
 
 
@@ -130,6 +123,23 @@ public class GameCore : MonoBehaviour
             PlayerFactory.GetPlayer("Player2", gameCorePlayer2) :
             PlayerFactory.GetBotPlayer(gameCorePlayer2);
     }
+
+
+
+    #region IGameCore Implementation
+    public Paddle GetPlayerPaddle1() => _playerPaddle1; 
+    public Paddle GetPlayerPaddle2() => _playerPaddle2; 
+    public KeyConfig GetKeyConfig() => _keyConfig; 
+    public Ball GetBall() => _ball;
+    public TextMeshProUGUI GetPlayer1Text() => _player1Text; 
+    public TextMeshProUGUI GetPlayer2Text() => _player2Text;
+    #endregion
+
+
+
+    
+
+    
     #endregion
 
 }
