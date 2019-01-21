@@ -11,7 +11,7 @@ public class Player : BasePlayer
     /// </summary>
     /// <param name="name">The Player name</param>
     /// <param name="gameCore">The given GameCorePlayer contains all the relevent methods for Player Object</param>
-    public Player(string name, GameCorePlayer gameCore) : base(name, gameCore)
+    public Player(string name, IGameCorePlayer gameCore) : base(name, gameCore)
     {
     }
     #endregion

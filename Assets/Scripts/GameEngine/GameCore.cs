@@ -114,8 +114,8 @@ public class GameCore : MonoBehaviour, IGameCore
     /// </summary>
     private void InitializePlayers()
     {
-        GameCorePlayer gameCorePlayer1 = GameCorePlayerFactory.GetGameCorePlayer(this, Side.Left);
-        GameCorePlayer gameCorePlayer2 = GameCorePlayerFactory.GetGameCorePlayer(this, Side.Right);
+        IGameCorePlayer gameCorePlayer1 = GameCorePlayerFactory.GetGameCorePlayer(this, Side.Left);
+        IGameCorePlayer gameCorePlayer2 = GameCorePlayerFactory.GetGameCorePlayer(this, Side.Right);
 
         _player1 = PlayerFactory.GetPlayer("Player1", gameCorePlayer1);
 

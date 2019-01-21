@@ -10,7 +10,7 @@ public abstract class BasePlayer
     private Paddle _playerPaddle;
     private int _score;
     private float _paddleMovementScale;
-    protected GameCorePlayer gameCore;
+    protected IGameCorePlayer gameCore;
     #endregion
 
     #region Properties
@@ -33,7 +33,7 @@ public abstract class BasePlayer
     /// </summary>
     /// <param name="playerName">The name of the given player</param>
     /// <param name="core">The given GameCorePlayer contains all the relevent methods for Player Object</param>
-    public BasePlayer(string playerName, GameCorePlayer core) : base()
+    public BasePlayer(string playerName, IGameCorePlayer core) : base()
     {
         PlayerName = playerName;
         gameCore = core;

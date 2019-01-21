@@ -11,7 +11,7 @@ public class BotPlayer : BasePlayer
     /// </summary>
     /// <param name="name">The Player name</param>
     /// <param name="gameCore">The given GameCorePlayer contains all the relevent methods for Player Object</param>
-    public BotPlayer(string name, GameCorePlayer gameCore) : base(name, gameCore)
+    public BotPlayer(string name, IGameCorePlayer gameCore) : base(name, gameCore)
     {
     }
     #endregion

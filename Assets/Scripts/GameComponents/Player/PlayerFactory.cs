@@ -6,7 +6,7 @@ public class PlayerFactory
     /// <summary>
     /// Create new player(human) object 
     /// </summary>
-    public static BasePlayer GetPlayer(string playerName, GameCorePlayer gameCore)
+    public static BasePlayer GetPlayer(string playerName, IGameCorePlayer gameCore)
     {
         return new Player(playerName, gameCore);
     }
@@ -15,7 +15,7 @@ public class PlayerFactory
     /// <summary>
     /// Create new Bot player(computer) object 
     /// </summary>
-    public static BasePlayer GetBotPlayer(GameCorePlayer gameCore)
+    public static BasePlayer GetBotPlayer(IGameCorePlayer gameCore)
     {
         return new BotPlayer("Bot", gameCore);
     }
